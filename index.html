@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Professor</title>
+
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #e8ffe8, #b8f5c0);
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+      }
+
+      .card {
+        text-align: center;
+        background: white;
+        padding: 50px;
+        border-radius: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        animation: appear 1.5s ease;
+      }
+
+      h1 {
+        color: #159447;
+        font-size: 30px;
+        animation: float 2s infinite ease-in-out;
+      }
+
+      .message {
+        font-size: 20px;
+        color: #333;
+        margin: 30px 0;
+        opacity: 0;
+        animation: textAppear 2s ease 1s forwards;
+      }
+
+      button {
+        padding: 12px 25px;
+        margin: 10px;
+        border: none;
+        border-radius: 25px;
+        background: #159447;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        transform: scale(1.1);
+        background: #0b6e32;
+      }
+
+      @keyframes appear {
+        from {
+          transform: scale(0);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes textAppear {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .heart {
+        position: absolute;
+        font-size: 25px;
+        animation: hearts 5s linear infinite;
+      }
+
+      @keyframes hearts {
+        from {
+          transform: translateY(100vh);
+          opacity: 1;
+        }
+        to {
+          transform: translateY(-100vh);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="heart" style="left: 10%">💚</div>
+    <div class="heart" style="left: 30%; animation-delay: 1s">💚</div>
+    <div class="heart" style="left: 70%; animation-delay: 2s">💚</div>
+    <div class="heart" style="left: 90%; animation-delay: 3s">💚</div>
+
+    <div class="card">
+      <h1>💻 Hello Professor 💚</h1>
+
+      <p class="message">
+        Hello Professor, I hope you have a wonderful year with our department.
+      </p>
+
+      <button onclick="showMessage()">Click Me 💚</button>
+      <button onclick="changeColor()">✨ Surprise</button>
+    </div>
+
+    <script>
+      function showMessage() {
+        alert(
+          "Hello Professor, I hope you have a wonderful year with our department."
+        );
+      }
+
+      function changeColor() {
+        document.body.style.background =
+          "linear-gradient(135deg, #c8ffd4, #72e69a)";
+      }
+    </script>
+  </body>
+</html>
